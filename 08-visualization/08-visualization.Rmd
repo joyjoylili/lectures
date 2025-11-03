@@ -1,8 +1,8 @@
 ---
 title: "Introduction to Data Science"
-subtitle: "Session 9: Visualization"
+subtitle: "Session 8: Visualization"
 author: "Simon Munzert"
-institute: "Hertie School | [GRAD-C11/E1339](https://github.com/intro-to-data-science-24)" #"`r format(Sys.time(), '%d %B %Y')`"
+institute: "Hertie School | [GRAD-C11/E1339](https://github.com/intro-to-data-science-25)" #"`r format(Sys.time(), '%d %B %Y')`"
 output:
   xaringan::moon_reader:
     includes:
@@ -660,33 +660,6 @@ Choropleth map illustrating the location of civilian airfields in the German Emp
 ---
 # Visual inference
 
-.pull-left-wide[
-
-### Human talent and weakness
-
-- Humans are extremely good at recognizing patterns.
-- At the same time, humans are also extremely good at inferring patterns when there are none (tendency to see patterns in random data = "apophenia").
-- This is somewhat linked to the fact that our species is bad at dealing with probability and randomness.
-
-### Concerns with exploratory data analysis
-
-- A concern that frequently arises with exploratory analysis is that it lacks the rigor of formal tests in confirmatory analysis or conventional statistical inference.
-- Long-standing reservations against visualization as merely "informal" approach to data analysis and the fear that beautiful pictures may in fact not correspond to any meaningful patterns of substantive scientific interest.
-]
-
-
-.pull-right-small[
-<div align="center">
-<br>
-<img src="pics/mars-image.png" width=400>
-<br>
-<img src="pics/virgin-mary-toast.jpg" width=300>
-</div>
-]
-
----
-# Visual inference (cont.)
-
 .pull-left[
 ### Overcoming the exploratory vs. confirmatory visualization divide
 
@@ -750,8 +723,57 @@ The visual hypothesis test involves the following steps:
 <img src="pics/histograms.png" width=780>
 </div>
 
+---
+# Visual inference: which plot stands out from the rest?
+
+<div align="center">
+<img src="pics/histograms.png" width=780>
+</div>
+
+---
+# None! All just show runif(500, 0, 1).
+
+<div align="center">
+<img src="pics/histograms.png" width=780>
+</div>
+
+---
+# Lineup plots in the wild
+
+<div align="center">
+<img src="pics/lineup-plot-global-warming.png" width=800>
+</div>
+
+"There's always someone who starts whining that global warming isn't so bad, because the summer of 1976 was much worse. They always bring up the summer of 1976. Here's the ammunition to shoot down that nonsense." (See [here](https://x.com/ed_hawkins/status/1538819208154324993?cxt=HHwWgoCxudb6_doqAAAA).)
 
 
+
+---
+# Visual inference - a caveat
+
+.pull-left-wide[
+
+### Human talent and weakness
+
+- Humans are extremely good at recognizing patterns.
+- At the same time, humans are also extremely good at inferring patterns when there are none (tendency to see patterns in random data = "apophenia").
+- This is somewhat linked to the fact that our species is bad at dealing with probability and randomness.
+
+### Concerns with exploratory data analysis
+
+- A concern that frequently arises with exploratory analysis is that it lacks the rigor of formal tests in confirmatory analysis or conventional statistical inference.
+- Long-standing reservations against visualization as merely "informal" approach to data analysis and the fear that beautiful pictures may in fact not correspond to any meaningful patterns of substantive scientific interest.
+]
+
+
+.pull-right-small[
+<div align="center">
+<br>
+<img src="pics/mars-image.png" width=400>
+<br>
+<img src="pics/virgin-mary-toast.jpg" width=300>
+</div>
+]
 
 
 
@@ -1661,20 +1683,6 @@ class: smalltext
 
 
 
----
-# FiveThirtyEight 2024 election forecast
-
-.pull-center[
-<div align="center">
-<br>
-<img src="pics/538-2024.png" height=500>
-</div>
-`Source` [FiveThirtyEight](https://projects.fivethirtyeight.com/2024-election-forecast/)
-]
-
-
-
-
 
 
 <!-- ############################################ -->
@@ -2186,11 +2194,11 @@ name: bestgraph
 
 ### Assignment
 
-Assignment 4 is online. Check it out and start plotting!
+Assignment 3 is online. Check it out and start plotting!
 
 ### Next lecture
 
-We'll start to wrap things up with automation, scheduling, and writing R packages.
+We'll continue with visualizations - with a focus on communication and monitoring.
 
 
 

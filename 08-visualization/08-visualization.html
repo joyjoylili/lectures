@@ -20,13 +20,13 @@ class: center, middle, inverse, title-slide
 # Introduction to Data Science
 ]
 .subtitle[
-## Session 9: Visualization
+## Session 8: Visualization
 ]
 .author[
 ### Simon Munzert
 ]
 .institute[
-### Hertie School | <a href="https://github.com/intro-to-data-science-24">GRAD-C11/E1339</a>
+### Hertie School | <a href="https://github.com/intro-to-data-science-25">GRAD-C11/E1339</a>
 ]
 
 ---
@@ -648,33 +648,6 @@ Choropleth map illustrating the location of civilian airfields in the German Emp
 ---
 # Visual inference
 
-.pull-left-wide[
-
-### Human talent and weakness
-
-- Humans are extremely good at recognizing patterns.
-- At the same time, humans are also extremely good at inferring patterns when there are none (tendency to see patterns in random data = "apophenia").
-- This is somewhat linked to the fact that our species is bad at dealing with probability and randomness.
-
-### Concerns with exploratory data analysis
-
-- A concern that frequently arises with exploratory analysis is that it lacks the rigor of formal tests in confirmatory analysis or conventional statistical inference.
-- Long-standing reservations against visualization as merely "informal" approach to data analysis and the fear that beautiful pictures may in fact not correspond to any meaningful patterns of substantive scientific interest.
-]
-
-
-.pull-right-small[
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="pics/mars-image.png" width=400&gt;
-&lt;br&gt;
-&lt;img src="pics/virgin-mary-toast.jpg" width=300&gt;
-&lt;/div&gt;
-]
-
----
-# Visual inference (cont.)
-
 .pull-left[
 ### Overcoming the exploratory vs. confirmatory visualization divide
 
@@ -738,8 +711,57 @@ The visual hypothesis test involves the following steps:
 &lt;img src="pics/histograms.png" width=780&gt;
 &lt;/div&gt;
 
+---
+# Visual inference: which plot stands out from the rest?
+
+&lt;div align="center"&gt;
+&lt;img src="pics/histograms.png" width=780&gt;
+&lt;/div&gt;
+
+---
+# None! All just show runif(500, 0, 1).
+
+&lt;div align="center"&gt;
+&lt;img src="pics/histograms.png" width=780&gt;
+&lt;/div&gt;
+
+---
+# Lineup plots in the wild
+
+&lt;div align="center"&gt;
+&lt;img src="pics/lineup-plot-global-warming.png" width=800&gt;
+&lt;/div&gt;
+
+"There's always someone who starts whining that global warming isn't so bad, because the summer of 1976 was much worse. They always bring up the summer of 1976. Here's the ammunition to shoot down that nonsense." (See [here](https://x.com/ed_hawkins/status/1538819208154324993?cxt=HHwWgoCxudb6_doqAAAA).)
 
 
+
+---
+# Visual inference - a caveat
+
+.pull-left-wide[
+
+### Human talent and weakness
+
+- Humans are extremely good at recognizing patterns.
+- At the same time, humans are also extremely good at inferring patterns when there are none (tendency to see patterns in random data = "apophenia").
+- This is somewhat linked to the fact that our species is bad at dealing with probability and randomness.
+
+### Concerns with exploratory data analysis
+
+- A concern that frequently arises with exploratory analysis is that it lacks the rigor of formal tests in confirmatory analysis or conventional statistical inference.
+- Long-standing reservations against visualization as merely "informal" approach to data analysis and the fear that beautiful pictures may in fact not correspond to any meaningful patterns of substantive scientific interest.
+]
+
+
+.pull-right-small[
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="pics/mars-image.png" width=400&gt;
+&lt;br&gt;
+&lt;img src="pics/virgin-mary-toast.jpg" width=300&gt;
+&lt;/div&gt;
+]
 
 
 
@@ -1649,20 +1671,6 @@ class: smalltext
 
 
 
----
-# FiveThirtyEight 2024 election forecast
-
-.pull-center[
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="pics/538-2024.png" height=500&gt;
-&lt;/div&gt;
-`Source` [FiveThirtyEight](https://projects.fivethirtyeight.com/2024-election-forecast/)
-]
-
-
-
-
 
 
 &lt;!-- ############################################ --&gt;
@@ -1807,7 +1815,7 @@ class: smalltext
 ]
 
 .pull-right[
-![](09-visualization_files/figure-html/mpg-layers-1-1.png)
+![](08-visualization_files/figure-html/mpg-layers-1-1.png)
 ]
 
 .footnote[&lt;sup&gt;1&lt;/sup&gt;This example is borrowed from [Andrew Heiss](https://datavizs21.classes.andrewheiss.com/content/).]
@@ -1829,7 +1837,7 @@ R&gt; ggplot(data = mpg,
 ]
 
 .pull-right[
-![](09-visualization_files/figure-html/mpg-layers-2-1.png)
+![](08-visualization_files/figure-html/mpg-layers-2-1.png)
 ]
 
 
@@ -1850,7 +1858,7 @@ R&gt; ggplot(data = mpg,
 ]
 
 .pull-right[
-![](09-visualization_files/figure-html/mpg-layers-3-1.png)
+![](08-visualization_files/figure-html/mpg-layers-3-1.png)
 ]
 
 ---
@@ -1870,7 +1878,7 @@ R&gt; ggplot(data = mpg,
 ]
 
 .pull-right[
-![](09-visualization_files/figure-html/mpg-layers-4-1.png)
+![](08-visualization_files/figure-html/mpg-layers-4-1.png)
 ]
 
 
@@ -1892,7 +1900,7 @@ R&gt; ggplot(data = mpg,
 ]
 
 .pull-right[
-![](09-visualization_files/figure-html/mpg-layers-5-1.png)
+![](08-visualization_files/figure-html/mpg-layers-5-1.png)
 ]
 
 
@@ -1915,7 +1923,7 @@ R&gt; ggplot(data = mpg,
 ]
 
 .pull-right[
-![](09-visualization_files/figure-html/mpg-layers-6-1.png)
+![](08-visualization_files/figure-html/mpg-layers-6-1.png)
 ]
 
 
@@ -1942,7 +1950,7 @@ R&gt; ggplot(data = mpg,
 ]
 
 .pull-right[
-![](09-visualization_files/figure-html/mpg-layers-7-1.png)
+![](08-visualization_files/figure-html/mpg-layers-7-1.png)
 ]
 
 
@@ -1970,7 +1978,7 @@ R&gt; ggplot(data = mpg,
 ]
 
 .pull-right[
-![](09-visualization_files/figure-html/mpg-layers-8-1.png)
+![](08-visualization_files/figure-html/mpg-layers-8-1.png)
 ]
 
 
@@ -2001,7 +2009,7 @@ R&gt; ggplot(data = mpg,
 ]
 
 .pull-right[
-![](09-visualization_files/figure-html/mpg-layers-9-1.png)
+![](08-visualization_files/figure-html/mpg-layers-9-1.png)
 ]
 
 
@@ -2031,7 +2039,7 @@ R&gt; ggplot(data = mpg,
 ]
 
 .pull-right[
-![](09-visualization_files/figure-html/mpg-layers-finished-1.png)
+![](08-visualization_files/figure-html/mpg-layers-finished-1.png)
 ]
 
 
@@ -2184,11 +2192,11 @@ name: bestgraph
 
 ### Assignment
 
-Assignment 4 is online. Check it out and start plotting!
+Assignment 3 is online. Check it out and start plotting!
 
 ### Next lecture
 
-We'll start to wrap things up with automation, scheduling, and writing R packages.
+We'll continue with visualizations - with a focus on communication and monitoring.
 
 
 
@@ -2203,11 +2211,11 @@ We'll start to wrap things up with automation, scheduling, and writing R package
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "github",
-"highlightLines": true,
-"countIncrementalSlides": false,
-"ratio": "16:9",
-"hash": true
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "countIncrementalSlides": false,
+  "ratio": "16:9",
+  "hash": true
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
