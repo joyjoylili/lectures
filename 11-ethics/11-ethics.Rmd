@@ -1,52 +1,63 @@
-<!DOCTYPE html>
-<html lang="" xml:lang="">
-  <head>
-    <title>Introduction to Data Science</title>
-    <meta charset="utf-8" />
-    <meta name="author" content="Simon Munzert" />
-    <script src="libs/header-attrs/header-attrs.js"></script>
-    <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
-    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
-    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
-    <link rel="stylesheet" href="../simons-touch.css" type="text/css" />
-  </head>
-  <body>
-    <textarea id="source">
-class: center, middle, inverse, title-slide
-
-.title[
-# Introduction to Data Science
-]
-.subtitle[
-## Session 12: Data science ethics
-]
-.author[
-### Simon Munzert
-]
-.institute[
-### Hertie School | <a href="https://github.com/intro-to-data-science-24">GRAD-C11/E1339</a>
-]
-
+---
+title: "Introduction to Data Science"
+subtitle: "Session 11:  Data science ethics"
+author: "Simon Munzert"
+institute: "Hertie School | [GRAD-C11/E1339](https://github.com/intro-to-data-science-25)" #"`r format(Sys.time(), '%d %B %Y')`"
+output:
+  xaringan::moon_reader:
+    includes:
+      after_body: "../add_hertie_logo.html"
+      in_header: "../my_header.html"
+    css: [default,'../simons-touch.css', metropolis, metropolis-fonts] 
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+      hash: true
 ---
 
 
-
-&lt;style type="text/css"&gt;
+```{css, echo=FALSE} 
 @media print { # print out incremental slides; see https://stackoverflow.com/questions/56373198/get-xaringan-incremental-animations-to-print-to-pdf/56374619#56374619
   .has-continuation {
     display: block !important;
   }
 }
-&lt;/style&gt;
+```
 
+```{r setup, include=FALSE}
+# figures formatting setup
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  comment = "  ",
+  prompt = T,
+  fig.align="center", #fig.width=6, fig.height=4.5, 
+  # out.width="748px", #out.length="520.75px",
+  dpi=300, #fig.path='Figs/',
+  cache=F, #echo=F, warning=F, message=F
+  engine.opts = list(bash = "-l")
+  )
 
+## Next hook based on this SO answer: https://stackoverflow.com/a/39025054
+knit_hooks$set(
+  prompt = function(before, options, envir) {
+    options(
+      prompt = if (options$engine %in% c('sh','bash')) '$ ' else 'R> ',
+      continue = if (options$engine %in% c('sh','bash')) '$ ' else '+ '
+      )
+})
+
+library(tidyverse)
+library(kableExtra)
+```
 
 
 # Table of contents
 
-&lt;br&gt;&lt;br&gt;
+<br><br>
 
 1. [Everyday ethics in data science](#everyday)
 
@@ -59,14 +70,14 @@ class: center, middle, inverse, title-slide
 
 
 
-&lt;!-- ############################################ --&gt;
+<!-- ############################################ -->
 ---
 class: inverse, center, middle
 name: everyday
 
 # Everyday ethics in data science
 
-&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
+<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 
 
@@ -129,12 +140,12 @@ background-color: #000000
 ]
 
 .pull-right-center[
-&lt;br&gt;
-&lt;div align="center"&gt;
-&lt;img src="pics/data-science-flow.png" height=200&gt;
-&lt;br&gt;
-&lt;img src="pics/wickham.jpeg" height=200&gt;
-&lt;/div&gt;
+<br>
+<div align="center">
+<img src="pics/data-science-flow.png" height=200>
+<br>
+<img src="pics/wickham.jpeg" height=200>
+</div>
 ]
 
 
@@ -164,12 +175,12 @@ background-color: #000000
 ]
 
 .pull-right-center[
-&lt;br&gt;
-&lt;div align="center"&gt;
-&lt;img src="pics/data-science-ethics.png" height=200&gt;
-&lt;br&gt;
-&lt;img src="pics/wickham.jpeg" height=200&gt;
-&lt;/div&gt;
+<br>
+<div align="center">
+<img src="pics/data-science-ethics.png" height=200>
+<br>
+<img src="pics/wickham.jpeg" height=200>
+</div>
 ]
 
 
@@ -182,11 +193,11 @@ background-color: #000000
 # Data science ethics
 
 .pull-left-small-center[
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div align="center" class = "font200"&gt;
-&lt;b&gt;Data science ethics &lt;/br&gt;∋&lt;/b&gt; &lt;/br&gt; &lt;b&gt;Classical research ethics&lt;sup&gt;1&lt;/sup&gt;&lt;/b&gt;
-&lt;/div&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;sup&gt;1&lt;/sup&gt;Honesty, objectivity, prudence, openness, respect for intellectual property, social responsibility, ...
+<br><br>
+<div align="center" class = "font200">
+<b>Data science ethics </br>∋</b> </br> <b>Classical research ethics<sup>1</sup></b>
+</div>
+<br><br><br><sup>1</sup>Honesty, objectivity, prudence, openness, respect for intellectual property, social responsibility, ...
 ]
 
 
@@ -198,10 +209,10 @@ background-color: #000000
 # Data science ethics
 
 .pull-left-small-center[
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;div align="center" class = "font200"&gt;
-&lt;b&gt;Data science ethics &lt;/br&gt;∋&lt;/b&gt; &lt;/br&gt; &lt;b&gt;The ethics of &lt;/br&gt; everyday decisions &lt;/br&gt; of data scientists&lt;/b&gt;
-&lt;/div&gt;
+<br><br>
+<div align="center" class = "font200">
+<b>Data science ethics </br>∋</b> </br> <b>The ethics of </br> everyday decisions </br> of data scientists</b>
+</div>
 ]
 
 
@@ -216,25 +227,25 @@ background-image: url("pics/clickworker.png")
 ---
 # How do I pay clickworkers fairly?
 
-&lt;br&gt; 
+<br> 
 
 .pull-left[
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="pics/clickworker-01.jpeg" height=300&gt;
-&lt;/div&gt;
+<div align="center">
+<br>
+<img src="pics/clickworker-01.jpeg" height=300>
+</div>
 ]
 
 .pull-right[
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="pics/clickworker-02.jpeg" height=300&gt;
-&lt;/div&gt;
+<div align="center">
+<br>
+<img src="pics/clickworker-02.jpeg" height=300>
+</div>
 ]
 
-&lt;br&gt; 
+<br> 
 
-`Source` [Muldoon, J., &amp; Apostolidis, P. (2023). ‘Neither work nor leisure’: Motivations of microworkers in the United Kingdom on three digital platforms. &lt;i&gt;New Media &amp; Society&lt;/i&gt;, 14614448231183942.](https://journals.sagepub.com/doi/full/10.1177/14614448231183942)
+`Source` [Muldoon, J., & Apostolidis, P. (2023). ‘Neither work nor leisure’: Motivations of microworkers in the United Kingdom on three digital platforms. <i>New Media & Society</i>, 14614448231183942.](https://journals.sagepub.com/doi/full/10.1177/14614448231183942)
 
 
 
@@ -242,25 +253,25 @@ background-image: url("pics/clickworker.png")
 ---
 # How do I pay clickworkers fairly?
 
-&lt;br&gt; 
+<br> 
 
 .pull-left[
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="pics/clickworker-03.jpeg" height=300&gt;
-&lt;/div&gt;
+<div align="center">
+<br>
+<img src="pics/clickworker-03.jpeg" height=300>
+</div>
 ]
 
 .pull-right[
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="pics/clickworker-04.jpeg" height=300&gt;
-&lt;/div&gt;
+<div align="center">
+<br>
+<img src="pics/clickworker-04.jpeg" height=300>
+</div>
 ]
 
-&lt;br&gt;
+<br>
 
-`Source` [Muldoon, J., &amp; Apostolidis, P. (2023). ‘Neither work nor leisure’: Motivations of microworkers in the United Kingdom on three digital platforms. &lt;i&gt;New Media &amp; Society&lt;/i&gt;, 14614448231183942.](https://journals.sagepub.com/doi/full/10.1177/14614448231183942)
+`Source` [Muldoon, J., & Apostolidis, P. (2023). ‘Neither work nor leisure’: Motivations of microworkers in the United Kingdom on three digital platforms. <i>New Media & Society</i>, 14614448231183942.](https://journals.sagepub.com/doi/full/10.1177/14614448231183942)
 
 
 
@@ -284,49 +295,49 @@ background-color: #000000
 ---
 # How do I protect the privacy of my research subjects?
 
-&lt;div align="center"&gt;
-&lt;img src="pics/url-data-01.png" width=900&gt;
-&lt;/div&gt;
+<div align="center">
+<img src="pics/url-data-01.png" width=900>
+</div>
 
-`Source` Munzert, Simon, Barberá, Pablo, Guess, Andrew M., &amp; Yang, JungHwan (2022). Media Exposure and Opinion Formation in an Age of Information Overload (MEOF). GESIS, Cologne. https://doi.org/10.4232/1.13981.
-
----
-# How do I protect the privacy of my research subjects?
-
-&lt;div align="center"&gt;
-&lt;img src="pics/url-data-02.png" width=900&gt;
-&lt;/div&gt;
-
-`Source` Munzert, Simon, Barberá, Pablo, Guess, Andrew M., &amp; Yang, JungHwan (2022). Media Exposure and Opinion Formation in an Age of Information Overload (MEOF). GESIS, Cologne. https://doi.org/10.4232/1.13981.
-
+`Source` Munzert, Simon, Barberá, Pablo, Guess, Andrew M., & Yang, JungHwan (2022). Media Exposure and Opinion Formation in an Age of Information Overload (MEOF). GESIS, Cologne. https://doi.org/10.4232/1.13981.
 
 ---
 # How do I protect the privacy of my research subjects?
 
-&lt;div align="center"&gt;
-&lt;img src="pics/url-data-03.png" width=900&gt;
-&lt;/div&gt;
+<div align="center">
+<img src="pics/url-data-02.png" width=900>
+</div>
 
-`Source` Munzert, Simon, Barberá, Pablo, Guess, Andrew M., &amp; Yang, JungHwan (2022). Media Exposure and Opinion Formation in an Age of Information Overload (MEOF). GESIS, Cologne. https://doi.org/10.4232/1.13981.
+`Source` Munzert, Simon, Barberá, Pablo, Guess, Andrew M., & Yang, JungHwan (2022). Media Exposure and Opinion Formation in an Age of Information Overload (MEOF). GESIS, Cologne. https://doi.org/10.4232/1.13981.
 
 
 ---
 # How do I protect the privacy of my research subjects?
 
-&lt;div align="center"&gt;
-&lt;img src="pics/url-data-04.png" width=900&gt;
-&lt;/div&gt;
+<div align="center">
+<img src="pics/url-data-03.png" width=900>
+</div>
 
-`Source` Munzert, Simon, Barberá, Pablo, Guess, Andrew M., &amp; Yang, JungHwan (2022). Media Exposure and Opinion Formation in an Age of Information Overload (MEOF). GESIS, Cologne. https://doi.org/10.4232/1.13981.
+`Source` Munzert, Simon, Barberá, Pablo, Guess, Andrew M., & Yang, JungHwan (2022). Media Exposure and Opinion Formation in an Age of Information Overload (MEOF). GESIS, Cologne. https://doi.org/10.4232/1.13981.
+
 
 ---
 # How do I protect the privacy of my research subjects?
 
-&lt;div align="center"&gt;
-&lt;img src="pics/url-data-05.png" width=900&gt;
-&lt;/div&gt;
+<div align="center">
+<img src="pics/url-data-04.png" width=900>
+</div>
 
-`Source` Munzert, Simon, Barberá, Pablo, Guess, Andrew M., &amp; Yang, JungHwan (2022). Media Exposure and Opinion Formation in an Age of Information Overload (MEOF). GESIS, Cologne. https://doi.org/10.4232/1.13981.
+`Source` Munzert, Simon, Barberá, Pablo, Guess, Andrew M., & Yang, JungHwan (2022). Media Exposure and Opinion Formation in an Age of Information Overload (MEOF). GESIS, Cologne. https://doi.org/10.4232/1.13981.
+
+---
+# How do I protect the privacy of my research subjects?
+
+<div align="center">
+<img src="pics/url-data-05.png" width=900>
+</div>
+
+`Source` Munzert, Simon, Barberá, Pablo, Guess, Andrew M., & Yang, JungHwan (2022). Media Exposure and Opinion Formation in an Age of Information Overload (MEOF). GESIS, Cologne. https://doi.org/10.4232/1.13981.
 
 
 
@@ -355,30 +366,30 @@ background-color: #000000
 # Wrap-up
 
 .pull-left[
-1. **Data science** as a holistic endeavor is more than AI &amp; machine learning.
+1. **Data science** as a holistic endeavor is more than AI & machine learning.
 2. **Data science ethics** is more than automated decision making, algorithm fairness, and privacy preservation.
 3. While new data and technologies generate new-ish ethical problems, **you as students of data science** are more likely to be confronted with ethical decisions that pop up  in the data science pipeline (i.e., when generating, recording, processing, disseminating data).
 4. For **others in your team who are not data scientists**, this implies that a fundamental understanding of the data science pipeline is key to generate ethical insight on relevant problems at the intersection of data science and ethics.
 ]
 
 .pull-right[
-&lt;div align="center"&gt;
-&lt;img src="pics/venn-diagram-data-ethics.png" height=400&gt;
-&lt;/div&gt;
+<div align="center">
+<img src="pics/venn-diagram-data-ethics.png" height=400>
+</div>
 ]
 
 
 
 
 
-&lt;!-- ############################################ --&gt;
+<!-- ############################################ -->
 ---
 class: inverse, center, middle
 name: principles
 
 # Ethical principles
 
-&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
+<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 
 ---
@@ -392,9 +403,9 @@ name: principles
 - The principle of *Respect for Persons* (autonomy) is deeply rooted in deontological thinking.
 - Focused on **means**, not **ends**.
 
-&lt;div align="center"&gt;
-&lt;img src="pics/immanuel-kant.jpeg" height=220&gt;
-&lt;/div&gt;
+<div align="center">
+<img src="pics/immanuel-kant.jpeg" height=220>
+</div>
 ]
 
 .pull-right[
@@ -405,9 +416,9 @@ name: principles
 - The principle of *Beneficence* (risk/benefit analysis) is deeply rooted in consequentialist thinking.
 - Focused on **ends**, not **means**.
 
-&lt;div align="center"&gt;
-&lt;img src="pics/Jeremy-Bentham.png" height=220&gt;
-&lt;/div&gt;
+<div align="center">
+<img src="pics/Jeremy-Bentham.png" height=220>
+</div>
 ]
 
 
@@ -432,10 +443,10 @@ name: principles
 ]
 
 .pull-right-small-center[
-&lt;div align="center"&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;img src="pics/hippocrates.jpeg" height=400&gt;
-&lt;/div&gt;
+<div align="center">
+<br><br>
+<img src="pics/hippocrates.jpeg" height=400>
+</div>
 `Source` [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Hippocrates.jpg)
 ]
 
@@ -455,10 +466,10 @@ name: principles
 ]
 
 .pull-right-vsmall[
-&lt;div align="center"&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src="pics/judo-bow.gif" height=300&gt;
-&lt;/div&gt;
+<div align="center">
+<br><br><br>
+<img src="pics/judo-bow.gif" height=300>
+</div>
 ]
 
 --
@@ -484,10 +495,10 @@ name: principles
 ]
 
 .pull-right-vsmall[
-&lt;div align="center"&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src="pics/help-icon.jpeg" height=300&gt;
-&lt;/div&gt;
+<div align="center">
+<br><br><br>
+<img src="pics/help-icon.jpeg" height=300>
+</div>
 ]
 
 --
@@ -509,10 +520,10 @@ name: principles
 ]
 
 .pull-right-vsmall[
-&lt;div align="center"&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src="pics/compensation.png" height=300&gt;
-&lt;/div&gt;
+<div align="center">
+<br><br><br>
+<img src="pics/compensation.png" height=300>
+</div>
 ]
 --
 
@@ -534,10 +545,10 @@ name: principles
 ]
 
 .pull-right-vsmall[
-&lt;div align="center"&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src="pics/justitia.jpeg" height=300&gt;
-&lt;/div&gt;
+<div align="center">
+<br><br><br>
+<img src="pics/justitia.jpeg" height=300>
+</div>
 ]
 
 --
@@ -552,14 +563,14 @@ name: principles
 
 
 
-&lt;!-- ############################################ --&gt;
+<!-- ############################################ -->
 ---
 class: inverse, center, middle
 name: practice
 
 # Research ethics in practice
 
-&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
+<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 ---
 # Informed consent
@@ -581,12 +592,12 @@ In general, "informed consent" should include communicating
 
 .pull-right-center[
 
-&lt;div align="center"&gt;
-&lt;img src="pics/ottoman-empire-consent.png" height=350&gt;
-&lt;/div&gt;
-&lt;div align="center" class = "font80"&gt;
-&lt;i&gt;In this Ottoman Empire document from 1539 a father promises to not sue a surgeon in case of death following the removal of his son's urinary stones.&lt;/i&gt;
-&lt;/div&gt;
+<div align="center">
+<img src="pics/ottoman-empire-consent.png" height=350>
+</div>
+<div align="center" class = "font80">
+<i>In this Ottoman Empire document from 1539 a father promises to not sue a surgeon in case of death following the removal of his son's urinary stones.</i>
+</div>
 
 `Source` [Salih Selek / Journal of Medical Ethics](https://jme.bmj.com/content/36/10/639)
 ]
@@ -595,11 +606,11 @@ In general, "informed consent" should include communicating
 # Informed consent: example
 
 .pull-center[
-&lt;div align="center"&gt;
-&lt;img src="pics/cwa-consent-1.png" height=510&gt;
-&lt;img src="pics/cwa-consent-2.png" height=510&gt;
-&lt;img src="pics/cwa-consent-3.png" height=510&gt;
-&lt;/div&gt;
+<div align="center">
+<img src="pics/cwa-consent-1.png" height=510>
+<img src="pics/cwa-consent-2.png" height=510>
+<img src="pics/cwa-consent-3.png" height=510>
+</div>
 `Source` [Munzert et al. 2021](https://www.nature.com/articles/s41562-020-01044-x)
 ]
 
@@ -656,11 +667,11 @@ If obtaining full informed consent is not possible, for example, when informed c
 ]
 
 .pull-right-small2-center[
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="pics/salganik-anonymization-1.png" width=400&gt;
-&lt;img src="pics/salganik-anonymization-2.png" width=400&gt;
-&lt;/div&gt;
+<div align="center">
+<br>
+<img src="pics/salganik-anonymization-1.png" width=400>
+<img src="pics/salganik-anonymization-2.png" width=400>
+</div>
 
 `Source` [Matt Salganik, Bit By Bit](https://www.bitbybitbook.com/)
 ]
@@ -681,10 +692,10 @@ If obtaining full informed consent is not possible, for example, when informed c
 ]
 
 .pull-right-small2-center[
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="pics/salganik-safe.png" width=400&gt;
-&lt;/div&gt;
+<div align="center">
+<br>
+<img src="pics/salganik-safe.png" width=400>
+</div>
 
 `Source` [Matt Salganik, Bit By Bit](https://www.bitbybitbook.com/)
 ]
@@ -733,7 +744,7 @@ If obtaining full informed consent is not possible, for example, when informed c
 ---
 # Example items from an ethics review questionnaire
 
-1. Does the study involve vulnerable populations (e. g. children &lt;18, prison populations, refugees, ...)?
+1. Does the study involve vulnerable populations (e. g. children <18, prison populations, refugees, ...)?
 
 2. Is it plausible that individuals feel compelled to participate in the study, for instance due to pressure from others, such as management, works council, teachers, traditional or religious leaders, parent, or spouses?
 
@@ -764,14 +775,14 @@ If obtaining full informed consent is not possible, for example, when informed c
 - Open to all members of the Hertie School, including students!
 - Ethics procedure mandatory for all research projects involving human subjects, **including your Master's thesis**!
 - Three stages: self-assessment, review by the Research Ethics Officer, full review by the Research Ethics Committee
-- Check out the [Moodle page](https://moodle.hertie-school.org/course/view.php?id=1050&amp;section=27) on research ethics!
+- Check out the [Moodle page](https://moodle.hertie-school.org/course/section.php?id=36396) on research ethics!
 ]
 
 .pull-right[
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="pics/hertie-ethics-policy.png" width=480&gt;
-&lt;/div&gt;
+<div align="center">
+<br>
+<img src="pics/hertie-ethics-policy.png" width=480>
+</div>
 ]
 
 ---
@@ -784,27 +795,27 @@ If obtaining full informed consent is not possible, for example, when informed c
 - Open to all members of the Hertie School, including students!
 - Ethics procedure mandatory for all research projects involving human subjects, **including your Master's thesis**!
 - Three stages: self-assessment, review by the Research Ethics Officer, full review by the Research Ethics Committee
-- Check out the [Moodle page](https://moodle.hertie-school.org/course/view.php?id=1050&amp;section=28) on research ethics!
+- Check out the [Moodle page](https://moodle.hertie-school.org/course/view.php?id=1050&section=28) on research ethics!
 ]
 
 .pull-right[
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="pics/hertie-ethics-checklist.png" width=480&gt;
-&lt;/div&gt;
+<div align="center">
+<br>
+<img src="pics/hertie-ethics-checklist.png" width=480>
+</div>
 ]
 
 
 
 
-&lt;!-- ############################################ --&gt;
+<!-- ############################################ -->
 ---
 class: inverse, center, middle
 name: activity
 
 # Ethics committees in action
 
-&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
+<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 
 
@@ -812,7 +823,7 @@ name: activity
 
 .pull-left[
 
-&lt;br&gt; 
+<br> 
 
 ### Breakout time! Take on the role of an ethics committee and evaluate one of the studies shown on the following pages. Consider these questions:
 
@@ -823,20 +834,20 @@ name: activity
 ]
 
 .pull-right[
-&lt;div align="center"&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;img src="pics/breakout-time.jpeg" height=400&gt;
-&lt;/div&gt;
+<div align="center">
+<br><br>
+<img src="pics/breakout-time.jpeg" height=400>
+</div>
 ]
 
 ---
 # An audit study 
 
 .pull-center[
-&lt;div align="center"&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;img src="pics/gomez-discrimination-sport.png" height=450&gt;
-&lt;/div&gt;
+<div align="center">
+<br><br>
+<img src="pics/gomez-discrimination-sport.png" height=450>
+</div>
 `Source` [Gomez-Gonzalez et al., 2021](https://www.nature.com/articles/s41599-021-00773-2)
 ]
 
@@ -845,10 +856,10 @@ name: activity
 # A delicate data set
 
 .pull-center[
-&lt;div align="center"&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;img src="pics/okcupid-dataset.png" height=450&gt;
-&lt;/div&gt;
+<div align="center">
+<br><br>
+<img src="pics/okcupid-dataset.png" height=450>
+</div>
 `Source` [Kirkegaard/Bjerrekær, 2016](https://openpsych.net/files/papers/Kirkegaard_2016g.pdf)
 ]
 
@@ -860,177 +871,10 @@ background-color: #27363A
 
 # Thank you!
 
-&lt;br&gt;
-&lt;div align="center"&gt;
-&lt;img src="pics/data-science-not-machine-learning.jpeg" height=450&gt;
-&lt;/div&gt;
+<br>
+<div align="center">
+<img src="pics/data-science-not-machine-learning.jpeg" height=450>
+</div>
 
 
 
-    </textarea>
-<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script>var slideshow = remark.create({
-"highlightStyle": "github",
-"highlightLines": true,
-"countIncrementalSlides": false,
-"ratio": "16:9",
-"hash": true
-});
-if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
-  window.dispatchEvent(new Event('resize'));
-});
-(function(d) {
-  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
-  if (!r) return;
-  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
-  d.head.appendChild(s);
-})(document);
-
-(function(d) {
-  var el = d.getElementsByClassName("remark-slides-area");
-  if (!el) return;
-  var slide, slides = slideshow.getSlides(), els = el[0].children;
-  for (var i = 1; i < slides.length; i++) {
-    slide = slides[i];
-    if (slide.properties.continued === "true" || slide.properties.count === "false") {
-      els[i - 1].className += ' has-continuation';
-    }
-  }
-  var s = d.createElement("style");
-  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
-  d.head.appendChild(s);
-})(document);
-// delete the temporary CSS (for displaying all slides initially) when the user
-// starts to view slides
-(function() {
-  var deleted = false;
-  slideshow.on('beforeShowSlide', function(slide) {
-    if (deleted) return;
-    var sheets = document.styleSheets, node;
-    for (var i = 0; i < sheets.length; i++) {
-      node = sheets[i].ownerNode;
-      if (node.dataset["target"] !== "print-only") continue;
-      node.parentNode.removeChild(node);
-    }
-    deleted = true;
-  });
-})();
-// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
-// screen reader (see PR #262)
-(function(d) {
-  let res = {};
-  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
-    const t = tr.querySelector('td:nth-child(2)').innerText;
-    tr.querySelectorAll('td:first-child .key').forEach(key => {
-      const k = key.innerText;
-      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
-    });
-  });
-  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
-})(document);
-(function() {
-  "use strict"
-  // Replace <script> tags in slides area to make them executable
-  var scripts = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container script'
-  );
-  if (!scripts.length) return;
-  for (var i = 0; i < scripts.length; i++) {
-    var s = document.createElement('script');
-    var code = document.createTextNode(scripts[i].textContent);
-    s.appendChild(code);
-    var scriptAttrs = scripts[i].attributes;
-    for (var j = 0; j < scriptAttrs.length; j++) {
-      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
-    }
-    scripts[i].parentElement.replaceChild(s, scripts[i]);
-  }
-})();
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-// adds .remark-code-has-line-highlighted class to <pre> parent elements
-// of code chunks containing highlighted lines with class .remark-code-line-highlighted
-(function(d) {
-  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
-  const preParents = [];
-  const findPreParent = function(line, p = 0) {
-    if (p > 1) return null; // traverse up no further than grandparent
-    const el = line.parentElement;
-    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
-  };
-
-  for (let line of hlines) {
-    let pre = findPreParent(line);
-    if (pre && !preParents.includes(pre)) preParents.push(pre);
-  }
-  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
-})(document);</script>
-<style>
-  .logo {
-    background-image: url("../hertieschool-neg.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 1.5em;
-    right: 1em;
-    width: 150px;
-    height: 128px;
-    z-index: 0;
-  }
-</style>
-  
-  <script>
-  document
-.querySelectorAll(
-  '.remark-slide-content' +
-    ':not(.title-slide)' +
-    ':not(.inverse)' +
-	
-    // add additional classes to exclude here, e.g.
-  // ':not(.inverse)' +
-    ':not(.hide-logo)'
-)
-.forEach(el => {
-  el.innerHTML += '<div class="logo"></div>';
-});
-</script>
-
-<script>
-slideshow._releaseMath = function(el) {
-  var i, text, code, codes = el.getElementsByTagName('code');
-  for (i = 0; i < codes.length;) {
-    code = codes[i];
-    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
-      text = code.textContent;
-      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
-          /^\$\$(.|\s)+\$\$$/.test(text) ||
-          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
-        code.outerHTML = code.innerHTML;  // remove <code></code>
-        continue;
-      }
-    }
-    i++;
-  }
-};
-slideshow._releaseMath(document);
-</script>
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-(function () {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
-  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
-    script.src  = script.src.replace(/^https?:/, '');
-  document.getElementsByTagName('head')[0].appendChild(script);
-})();
-</script>
-  </body>
-</html>
